@@ -21,7 +21,7 @@ function moveBall() {
     balles.forEach((balle, num) => {
 
         let balleY = balle.offsetTop;
-        balleY -= rand(8);
+        balleY -= rand(6);
         balle.style.top = balleY + "px";
         if (balleY < 0) {
             balle.remove();

@@ -5,13 +5,18 @@
 
 }
 
+$col_fond : rgb(95, 95, 253);
+$col_contenant : black;
+$color_liquide : rgba(255, 255, 224, 0.233);
+$color_bulle : rgb(238, 255, 7);
+
 body {
     font-family: "Roboto", sans-serif;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(95, 95, 253);
+    background-color: $col_fond;
     color: white;
 
     h1,
@@ -34,13 +39,15 @@ body {
     flex-direction: column;
     margin: auto;
     font-size: 14px;
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid $col_contenant;
+    border-bottom: 2px solid $col_contenant;
+    border-right: 2px solid $col_contenant;
     border-radius: 0 0 25px 25px;
     overflow: hidden;
    
 }
+
+
 
 .vide {
     display: flex;
@@ -51,6 +58,7 @@ body {
     background-color: transparent;
     overflow: hidden;
     transition: 0.5s;
+
 }
 
 .liquide {
@@ -59,7 +67,7 @@ body {
     align-items: center;
     width: 100%;
     height: 0%;
-    background: rgba(255, 255, 224, 0.233);
+    background: $color_liquide;
     overflow: hidden;
     transition: 0.5s;
     position: relative;
@@ -81,9 +89,9 @@ body {
     align-items: center;
     width: 50px;
     height: 80px;
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid $col_contenant;
+    border-bottom: 2px solid $col_contenant;
+    border-right: 2px solid $col_contenant;
     font-size: 12px;
     border-radius: 0 0 10px 10px;
     transition: 1s;
@@ -98,14 +106,15 @@ body {
 
 .actif {
     
-    background: rgba(255, 255, 224, 0.233);
+    background: $color_liquide;
      
 }
 
 .bulle {
     width: 2px;
     height: 2px;
-    background-color: rgb(255, 255, 255);
+    background-color: $color_bulle;
+    box-shadow: 0 0 10px ;
     border-radius: 50%;
     position: absolute;
 }
