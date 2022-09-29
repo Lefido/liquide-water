@@ -17,7 +17,7 @@ function running() {
 
 function moveBall() {
 
-    var balles = document.querySelectorAll('.balle');
+    var balles = document.querySelectorAll('.bulle');
     balles.forEach((balle, num) => {
 
         let balleY = balle.offsetTop;
@@ -36,7 +36,7 @@ function moveBall() {
 function newBall() {
 
     let balle = document.createElement('div');
-    balle.classList.add('balle');
+    balle.classList.add('bulle');
     balle.style.top = (liquide.offsetHeight) + "px"
     balle.style.left = rand(liquide.offsetWidth) + "px"
     
