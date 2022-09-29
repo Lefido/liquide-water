@@ -5,56 +5,48 @@ const liquide = document.querySelector('.liquide')
 
 var pourcentage;
 var litre;
-var tabVitBalle = [];
 
-setInterval(running, 10);
 setInterval(newBall, 50);
 setInterval(moveBall, 10);
 
-function running() {
-
-}
-
 function moveBall() {
 
-    var balles = document.querySelectorAll('.bulle');
-    balles.forEach((balle, num) => {
+    var bulles = document.querySelectorAll('.bulle');
+    bulles.forEach((bulle, num) => {
 
-        let balleY = balle.offsetTop;
-        balleY -= rand(6);
-        balle.style.top = balleY + "px";
-        if (balleY < 0) {
-            balle.remove();
-           
+        let bulleY = bulle.offsetTop;
+        bulleY -= rand(6);
+        bulle.style.top = bulleY + "px";
+
+        if (bulleY < 0) {
+            bulle.remove();
         }
-        
-
+        bulle.style.top = bulleY + "px";
     })
 
 }
 
 function newBall() {
 
-    let balle = document.createElement('div');
-    balle.classList.add('bulle');
-    balle.style.top = (liquide.offsetHeight) + "px"
-    balle.style.left = rand(liquide.offsetWidth) + "px"
+    let bulle = document.createElement('div');
+    bulle.classList.add('bulle');
+    bulle.style.top = (liquide.offsetHeight) + "px"
+    bulle.style.left = rand(liquide.offsetWidth) + "px"
     
-    balle.style.top += "px"
-    balle.style.left += "px"
+    bulle.style.top += "px"
+    bulle.style.left += "px"
 
-    let tailleBalle = rand(5)
-    balle.style.width = tailleBalle + "px"
-    balle.style.height = tailleBalle + "px"
+    let tailleBulle = rand(5)
+    bulle.style.width = tailleBulle + "px"
+    bulle.style.height = tailleBulle + "px"
 
-    liquide.appendChild(balle);
-
-    // console.log(balle.style.bottom,balle.style.left );
+    liquide.appendChild(bulle);
 
 }
 
 verres.forEach((verre, num) => {
     verre.addEventListener('click', function() {
+
         pourcentage = 0;
         litre = 2;
         verre.classList.toggle('actif')
@@ -63,7 +55,6 @@ verres.forEach((verre, num) => {
             pourcentage += 12.5
             litre -= 0.250
         }
-
         actif(num);
     })
 })
@@ -89,9 +80,7 @@ function actif(valeur){
 }
 
 function rand(valeur) {
-
-    return 1 + Math.floor(Math.random() * valeur)
-    
+    return 1 + Math.floor(Math.random() * valeur) 
 }
 
 
