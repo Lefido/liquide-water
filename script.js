@@ -10,7 +10,7 @@ var litre;
 setInterval(newBulle, 50);
 setInterval(moveBulle, 10);
 
-// Selection des petit contenant
+// Selection des petits contenants
 verres.forEach((verre, num) => {
     verre.addEventListener('click', function() {
 
@@ -26,7 +26,7 @@ verres.forEach((verre, num) => {
     })
 })
 
-// Active les verres sélectionnée
+// Active les verres sélectionnées
 function activeVerre(valeur){
 
     verres.forEach((verre, num) => {
